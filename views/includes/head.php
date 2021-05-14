@@ -7,3 +7,14 @@
         <link rel='stylesheet' href='/views/styles/style.css'>
         <title>Passo a passo</title>
     </head>
+
+    <body>
+        <h1>Passo a Passo</h1>
+        <h2><?= $titulo ?></h2>
+            
+        <div class="menu">
+            <ul>
+                <li><a href="/">Página inicial</a></li>
+                <li><a href="/views/second-page.php">Segunda página</a></li>
+            </ul>
+        </div>
