@@ -4,10 +4,11 @@
     $titulo = "Confirmação do cadastro";
     include("includes/head.php");
 
-    $nome = $_POST['nome'];
-    $idade = $_POST['idade'];
-    $telefone = $_POST['telefone'];
-    $email = $_POST['email'];
+    if ( $_POST['nome'] && $_POST['idade'] && $_POST['telefone'] ){
+        $nome = $_POST['nome'];
+        $idade = $_POST['idade'];
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
 ?>
 
     <h4>Cadastro efetuado com sucesso!</h4>
@@ -19,6 +20,10 @@
     <p>E-mail: <?= $email ?> </p>
 
 <?php
+    } else {
+        echo "Erro ao enviar o formulário";
+    }
+
     $nome_usuario = "Ulysses Werlich Borges";
     include("includes/footer.php");
 ?>
