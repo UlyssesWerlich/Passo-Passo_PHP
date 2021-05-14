@@ -15,11 +15,12 @@
 
     <body>
         <h1>Passo a Passo</h1>
-        <h3>Seja bem vindo, <?php echo "$nome_usuario" ?>.</h3>
+        <h3>Você está na segunda página.</h3>
 
-        <p> <a href="/views/second-page.php">Link para a segunda página</a></p>
+        <p><a href="/">Link para página inicial</a></p>
 
-        <p>Hora de acesso: <?= date('d/m/Y \à\s H:i:s') ?></p>
+        <p>Hora de acesso: <?php echo date('d/m/Y \à\s H:i:s') ?></p>
     </body>
 
 </html>
+
