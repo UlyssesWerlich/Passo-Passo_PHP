@@ -16,5 +16,6 @@
             <ul>
                 <li><a href="/">Página inicial</a></li>
                 <li><a href="/views/cadastro.php">Cadastro</a></li>
+                <li><a href="/views/lista.php">Lista de Contatos</a></li>
             </ul>
         </div>
