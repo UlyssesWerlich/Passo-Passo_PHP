@@ -22,6 +22,10 @@
 <?php
     } else {
         echo "Erro ao enviar o formulário";
+
+        if ( !$_POST['nome'] ) echo "<p>Necessário informar o nome</p>";
+        if ( !$_POST['idade'] ) echo "<p>Necessário informar a idade</p>";
+        echo !$_POST['telefone'] ? "<p>Necessário informar o telefone</p>" : "";
     }
 
     $nome_usuario = "Ulysses Werlich Borges";
