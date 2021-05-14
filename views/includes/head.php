@@ -15,6 +15,6 @@
         <div class="menu">
             <ul>
                 <li><a href="/">Página inicial</a></li>
-                <li><a href="/views/second-page.php">Segunda página</a></li>
+                <li><a href="/views/cadastro.php">Cadastro</a></li>
             </ul>
         </div>
