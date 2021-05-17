@@ -22,4 +22,15 @@ function listar(){
 
     return $query->fetchAll(PDO::FETCH_OBJ);
 }
+
+function consultar($id){
+    include("../database/connection.php");
+
+    $query = $pdo->prepare("SELECT * FROM pessoas WHERE id = :id");
+    $query->bindParam(':id', $id);
+    $query->execute();
+    $pdo = null;
+
+    return $query->fetch(PDO::FETCH_OBJ);
+}
 ?>
