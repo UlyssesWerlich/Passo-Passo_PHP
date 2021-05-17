@@ -2,7 +2,7 @@
     date_default_timezone_set('America/Sao_Paulo');
 
     $titulo = "Consulta";
-    include( $_SERVER['DOCUMENT_ROOT'] . "/includes/head.php");
+    include("includes/head.php");
 
     $id = $_GET['id'];
     $lista = [
@@ -27,5 +27,5 @@
     }
     
     $nome_usuario = "Ulysses Werlich Borges";
-    include( $_SERVER['DOCUMENT_ROOT'] . "/includes/footer.php");
+    include("includes/footer.php");
 ?>
