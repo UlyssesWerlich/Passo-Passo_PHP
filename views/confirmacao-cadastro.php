@@ -4,11 +4,22 @@
     $titulo = "Confirmação do cadastro";
     include("includes/head.php");
 
+    try{
+        $dsn_Options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+        $pdo = new PDO("mysql:host=localhost;dbname=pessoas","root","COxinha2020@", $dsn_Options);
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+
     if ( $_POST['nome'] && $_POST['idade'] && $_POST['telefone'] ){
         $nome = $_POST['nome'];
         $idade = $_POST['idade'];
         $email = $_POST['email'];
         $telefone = $_POST['telefone'];
+
+        $query = $pdo->prepare("INSERT INTO pessoas(nome, idade, telefone, email) VALUES('$nome', '$idade', '$telefone', '$email');");
+        $query->execute();
+        $pdo = null;
 ?>
 
     <h4>Cadastro efetuado com sucesso!</h4>
