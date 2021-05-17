@@ -1,7 +1,6 @@
 <?php
 
 function save( $nome, $idade, $telefone, $email ){
-
     include("../database/connection.php");
 
     $query = $pdo->prepare("INSERT INTO pessoas(nome, idade, telefone, email) VALUES(:nome, :idade, :telefone, :email);");
@@ -14,4 +13,13 @@ function save( $nome, $idade, $telefone, $email ){
     return $query->execute() ? ['nome' => $nome, 'idade' => $idade, 'telefone' => $telefone, 'email' => $email] : null;
 }
 
+
+function listar(){
+    include("../database/connection.php");
+
+    $query = $pdo->prepare("SELECT * FROM pessoas");
+    $query->execute();
+
+    return $query->fetchAll(PDO::FETCH_OBJ);
+}
 ?>

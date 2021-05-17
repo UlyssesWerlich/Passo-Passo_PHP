@@ -4,11 +4,8 @@
     $titulo = "Lista de contatos";
     include("includes/head.php");
 
-    $lista = [
-        [ 'id' => 1, 'nome' => 'Ulysses', 'idade' => '24', 'telefone' => '996120819', 'email' => 'werlichborgesulysses@gmail.com' ],
-        [ 'id' => 2, 'nome' => 'Maria', 'idade' => '43', 'telefone' => '996120843', 'email' => 'maria@gmail.com' ],
-        [ 'id' => 3, 'nome' => 'João', 'idade' => '32', 'telefone' => '996120865', 'email' => 'joao@gmail.com' ],
-    ];
+    include("../services/pessoaService.php");
+    $lista = listar();
 ?>
     <table border='1' >
         <thead>
@@ -22,10 +19,10 @@
         <tbody>
             <?php foreach ( $lista as $pessoa ){ ?>
                 <tr>
-                    <td><a href="/views/consulta.php?id=<?= $pessoa['id'] ?>" ><?= $pessoa['nome'] ?></a></td>
-                    <td><?php echo $pessoa['idade'] ?></td>
-                    <td><?php echo $pessoa['telefone'] ?></td>
-                    <td><?php echo $pessoa['email'] ?></td>
+                    <td><a href="/views/consulta.php?id=<?= $pessoa->id ?>" ><?= $pessoa->nome ?></a></td>
+                    <td><?= $pessoa->idade ?></td>
+                    <td><?= $pessoa->telefone ?></td>
+                    <td><?= $pessoa->email ?></td>
                 </tr>
             <?php } ?>
         </tbody>
