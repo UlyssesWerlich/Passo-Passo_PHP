@@ -1,8 +1,10 @@
 <?php
+    session_start();
     date_default_timezone_set('America/Sao_Paulo');
 
     $titulo = "Lista de contatos";
     include("includes/head.php");
+    include("includes/mensageria.php");
 
     include("../services/pessoaService.php");
     $lista = listar();
@@ -14,6 +16,7 @@
                 <th>Idade</th>
                 <th>Telefone</th>
                 <th>E-mail</th>
+                <th>Ação</th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +26,7 @@
                     <td><?= $pessoa->idade ?></td>
                     <td><?= $pessoa->telefone ?></td>
                     <td><?= $pessoa->email ?></td>
+                    <td><a href="/views/excluir.php?id=<?= $pessoa->id ?>">Excluir</a></td>
                 </tr>
             <?php } ?>
         </tbody>

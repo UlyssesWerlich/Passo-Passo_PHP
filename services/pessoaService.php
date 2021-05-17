@@ -33,4 +33,14 @@ function consultar($id){
 
     return $query->fetch(PDO::FETCH_OBJ);
 }
+
+function excluir($id){
+    include("../database/connection.php");
+
+    $query = $pdo->prepare("DELETE FROM pessoas WHERE id = :id");
+    $query->bindParam(':id', $id);
+    $pdo = null;
+    
+    return $query->execute();
+}
 ?>

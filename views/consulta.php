@@ -16,7 +16,8 @@
     <p>Idade: <?= $pessoa->idade ?></p>
     <p>Telefone: <?= $pessoa->telefone ?></p>
     <p>E-mail: <?= $pessoa->email ?></p>
-
+    </br>
+    <p><a href="/views/excluir.php?id=<?= $pessoa->id ?>">Excluir</a></p>
 <?php
     } else {
         echo "Informação não encontrada";
