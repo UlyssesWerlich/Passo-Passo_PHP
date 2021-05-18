@@ -1,0 +1,31 @@
+.mensageria {
+    margin: 16px 0px;
+}
+
+.mensageria .mensagem .sucesso {
+    padding: 5px;
+    background-color: rgb(180, 255, 180);
+}
+
+.mensageria .mensagem .erro {
+    padding: 5px;
+    background-color: rgb(255, 180, 180);
+}
+
+.mensageria .mensagem p{
+    margin: 0;
+}
+
+.mensageria .sub-mensagem .sucesso {
+    padding: 5px;
+    background-color: rgb(210, 255, 210);
+}
+
+.mensageria .sub-mensagem .erro {
+    padding: 5px;
+    background-color: rgb(255, 210, 210);
+}
+
+.mensageria .sub-mensagem p {
+    margin: 0;
+}

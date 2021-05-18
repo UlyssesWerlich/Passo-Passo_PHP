@@ -26,7 +26,10 @@
                     <td><?= $pessoa->idade ?></td>
                     <td><?= $pessoa->telefone ?></td>
                     <td><?= $pessoa->email ?></td>
-                    <td><a href="/views/excluir.php?id=<?= $pessoa->id ?>">Excluir</a></td>
+                    <td>
+                        <a href="/views/excluir.php?id=<?= $pessoa->id ?>">Excluir</a>
+                        <a href="/views/alteracao.php?id=<?= $pessoa->id ?>">Alterar</a>
+                    </td>
                 </tr>
             <?php } ?>
         </tbody>

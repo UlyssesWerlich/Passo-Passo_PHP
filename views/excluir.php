@@ -5,6 +5,6 @@
     $id = $_GET['id'];
     $resultado = excluir($id);
 
-    $_SESSION['mensagem'] = $resultado ? 'Contato excluído com sucesso' : 'Erro ao excluir contato';
+    $_SESSION['mensagem'] = $resultado ? [ 'texto' => 'Contato excluído com sucesso', 'tipo' => 'sucesso'] : [ 'texto' => 'Erro ao excluir contato', 'tipo' => 'erro'];
     header("Location: /views/lista.php", true);
 ?>
