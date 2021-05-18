@@ -1,12 +1,28 @@
 <?php
 
-class Aluno {
+class Pessoa {
 
   private $id;
   public $nome;
   private $idade;
   protected $telefone;
   protected $email;
+
+  public function __construct($id, $nome, $idade, $telefone, $email) {
+    $this->id = $id;
+    $this->nome = $nome;
+    $this->idade = $idade;
+    $this->telefone = $telefone;
+    $this->email = $email;
+  }
+
+  public function Pessoa($id, $nome, $idade, $telefone, $email) {
+    $this->id = $id;
+    $this->nome = $nome;
+    $this->idade = $idade;
+    $this->telefone = $telefone;
+    $this->email = $email;
+  }
 
   public function getId() {
     return $this->id;
@@ -20,8 +36,8 @@ class Aluno {
     return $this->nome;
   }
   
-  public function setNome($name) {
-    $this->nome = $name;
+  public function setNome($nome) {
+    $this->nome = $nome;
   }
   
   public function getIdade() {
