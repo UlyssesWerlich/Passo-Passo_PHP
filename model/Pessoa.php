@@ -1,27 +1,21 @@
 <?php
 
+declare(strict_types = 1);
+
 class Pessoa {
 
-  private $id;
-  public $nome;
-  private $idade;
-  protected $telefone;
-  protected $email;
+  private ?int $id;
+  private string $nome;
+  private int $idade;
+  private string $telefone;
+  protected ?string $email;
 
-  public function __construct($id, $nome, $idade, $telefone, $email) {
-    $this->id = $id;
-    $this->nome = $nome;
-    $this->idade = $idade;
-    $this->telefone = $telefone;
-    $this->email = $email;
-  }
-
-  public function Pessoa($id, $nome, $idade, $telefone, $email) {
-    $this->id = $id;
-    $this->nome = $nome;
-    $this->idade = $idade;
-    $this->telefone = $telefone;
-    $this->email = $email;
+  function set(array $post) {
+    $this->id = (int) $post['id'];
+    $this->nome = $post['nome'];
+    $this->idade = (int) $post['idade'];
+    $this->telefone = $post['telefone'];
+    $this->email = $post['email'];
   }
 
   public function getId() {
