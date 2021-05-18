@@ -1,7 +1,7 @@
 <?php
 
 function salvar( Pessoa $pessoa ){
-    include("../database/connection.php");
+    require("database/connection.php");
 
     $query = $pdo->prepare("INSERT INTO pessoas(nome, idade, telefone, email) VALUES(:nome, :idade, :telefone, :email);");
     $query->bindValue(':nome', $pessoa->getNome());
@@ -15,7 +15,7 @@ function salvar( Pessoa $pessoa ){
 
 
 function listar(){
-    include("../database/connection.php");
+    require("database/connection.php");
 
     $query = $pdo->prepare("SELECT * FROM pessoas");
     $query->execute();
@@ -24,7 +24,7 @@ function listar(){
 }
 
 function consultar($id){
-    include("../database/connection.php");
+    require("database/connection.php");
 
     $query = $pdo->prepare("SELECT * FROM pessoas WHERE id = :id");
     $query->bindParam(':id', $id);
@@ -35,7 +35,7 @@ function consultar($id){
 }
 
 function excluir($id){
-    include("../database/connection.php");
+    require("database/connection.php");
 
     $query = $pdo->prepare("DELETE FROM pessoas WHERE id = :id");
     $query->bindParam(':id', $id);
@@ -45,7 +45,7 @@ function excluir($id){
 }
 
 function alterar(Pessoa $pessoa){
-    include("../database/connection.php");
+    require("database/connection.php");
 
     $query = $pdo->prepare("UPDATE pessoas SET nome=:nome, idade=:idade, telefone=:telefone, email=:email WHERE id=:id;");
     $query->bindValue(':nome', $pessoa->getNome());
