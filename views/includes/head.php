@@ -15,7 +15,7 @@
         <div class="menu">
             <ul>
                 <li><a href="/">Página inicial</a></li>
-                <li><a href="/views/cadastro.php">Cadastro</a></li>
-                <li><a href="/views/lista.php">Lista de Contatos</a></li>
+                <li><a href="/?c=pessoa&m=lista">Lista de Contatos</a></li>
+                <li><a href="/?c=pessoa&m=cadastro">Cadastro de Contato</a></li>
             </ul>
         </div>
