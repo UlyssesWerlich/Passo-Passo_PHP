@@ -4,17 +4,16 @@ declare(strict_types = 1);
 
 class Pessoa {
 
-  private ?int $id;
+  private int $id;
   private string $nome;
   private int $idade;
   private string $telefone;
   protected ?string $email;
 
   function set(array $post) {
-    $this->id = (int) $post['id'];
-    $this->nome = $post['nome'];
-    $this->idade = (int) $post['idade'];
-    $this->telefone = $post['telefone'];
+    $this->nome = $post['nome'] ? $post['nome'] : null;
+    $this->idade = $post['idade'] ? (int) $post['idade'] : null;
+    $this->telefone = $post['telefone'] ? $post['telefone'] : null;
     $this->email = $post['email'];
   }
 
