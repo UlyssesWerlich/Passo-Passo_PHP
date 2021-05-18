@@ -1,18 +1,15 @@
 <?php
     if (isset($_SESSION['mensagem']) && !empty($_SESSION['mensagem'])){
-        $mensagem = $_SESSION['mensagem'];
-        $texto = $mensagem['texto'] ?? '';
-        $subMensagens = $mensagem['sub_mensagens'] ?? [];
-        $tipo = $mensagem['tipo'];
+        $mensagem = (object) $_SESSION['mensagem'];
 ?>
     <link rel='stylesheet' href='/views/styles/mensageria.css'>
     <div class="mensageria">
         <div class='mensagem'>
-            <p class='<?= $tipo ?>'><?= $texto ?></p>
+            <p class='<?= $mensagem->tipo ?>'><?= $mensagem->texto ?? ''?></p>
         </div>
-        <?php foreach( $subMensagens as $subMensagem ) { ?>
+        <?php foreach( $mensagem->sub_mensagens ?? [] as $subMensagem ) { ?>
             <div class="sub-mensagem">
-                <p class='<?= $tipo ?>'><?= $subMensagem ?></p>
+                <p class='<?= $mensagem->tipo ?>'><?= $subMensagem ?></p>
             </div>
         <?php } ?>
     </div>

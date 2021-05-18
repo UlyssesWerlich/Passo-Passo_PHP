@@ -9,7 +9,11 @@
 
     if ( save($_POST['nome'], $_POST['idade'], $_POST['telefone'], $_POST['email']) ){
 
-        $_SESSION['mensagem'] = [ 'texto' => 'Contato criado com sucesso', 'tipo' => 'sucesso'];
+        $mensagem = new stdClass();
+        $mensagem->texto = 'Contato criado com sucesso';
+        $mensagem->tipo = 'sucesso';
+
+        $_SESSION['mensagem'] = $mensagem;
         header('Location: /views/lista.php', true);
 
     } else {
@@ -19,7 +23,11 @@
         if ( !$_POST['idade']) array_push( $sub_mensagens , "Necessário informar a idade.");
         if ( !$_POST['telefone'] ) array_push( $sub_mensagens , "Necessário informar o telefone.");
 
-        $mensagem = [ 'texto' => 'Erro ao fazer a alteração.', 'sub_mensagens' => $sub_mensagens, 'tipo' => 'erro'];
+        $mensagem = new stdClass();
+        $mensagem->texto = 'Erro ao fazer a alteração.';
+        $mensagem->sub_mensagens = $sub_mensagens;
+        $mensagem->tipo = 'erro';
+
         $_SESSION['mensagem'] = $mensagem;
         header("Location: /views/cadastro.php", true);
     }

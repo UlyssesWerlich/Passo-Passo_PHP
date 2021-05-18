@@ -9,7 +9,7 @@
 
     if ( alterar( $_GET['id'], $_POST['nome'], $_POST['idade'], $_POST['telefone'], $_POST['email']) ){
 
-        $_SESSION['mensagem'] = [ 'texto' => 'Contato alterado com sucesso', 'tipo' => 'sucesso'];
+        $_SESSION['mensagem'] = (object) [ 'texto' => 'Contato alterado com sucesso', 'tipo' => 'sucesso'];
         header('Location: /views/lista.php', true);
 
     } else {
@@ -20,7 +20,7 @@
         if ( !$_POST['telefone'] ) array_push( $sub_mensagens , "Necessário informar o telefone.");
 
         $mensagem = [ 'texto' => 'Erro ao fazer a alteração.', 'sub_mensagens' => $sub_mensagens, 'tipo' => 'erro'];
-        $_SESSION['mensagem'] = $mensagem;
+        $_SESSION['mensagem'] = (object) $mensagem;
         header("Location: /views/alteracao.php?id=" . $_GET['id'] , true);
     }
 
